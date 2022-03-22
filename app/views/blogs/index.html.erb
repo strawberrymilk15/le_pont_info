@@ -1,0 +1,31 @@
+<% if current_admin %>
+  <%= link_to "ホームへ戻る" ,admin_homes_path, class: "all_back_home" %>
+<%elsif current_shop%>
+  <%= link_to "ホームへ戻る" ,shop_homes_path, class: "all_back_home" %>
+<%elsif current_buyer%>
+  <%= link_to "ホームへ戻る" ,buyer_homes_path, class: "all_back_home" %>
+<%end%>
+
+<div class="index_news_body">
+  <div class="new_news_div">
+    <%= image_tag 'logo88.png' , class: "new_news_logo_img" %>
+  </div>
+  <h1 class="index_news_h1">le pontブログ一覧</h1>
+  <div class="ad_blogs_list_div">
+  <%if Blog.exists?%>
+    <% @blogs.each do |b| %>
+      <%= link_to blog_path(b.id),class:"blogs_show_a" do %>
+        <div class="ad_blogs_contents">
+          <% if b.eyecathing.attached? %>
+            <%= image_tag b.eyecathing , class: "eyecatch", alt: "アイキャッチ画像" %>
+          <%else%>
+            <%= image_tag 'img.jpeg' ,class: "buy_ms_img"  %>
+          <%end%>
+          <p class="ad_blogs_title"><%= b.title %></p>
+        </div>
+      <%end%>
+    <%end%>
+  <%end%>
+</div>
+  
+</div>

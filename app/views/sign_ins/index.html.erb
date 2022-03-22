@@ -1,0 +1,11 @@
+<p class="back_home_p"><%= link_to 'Home',root_path , class: "nav-list1"  %></p>
+<div class="sign_up_body">
+  <div class="sign_up_div">
+    <%= image_tag 'logo88.png' %>
+  </div>
+  <p class="sign_up_p">いつもle pontをご利用頂きまして誠にありがとうございます。<br>会員ページへは以下のボタンからお進み下さい。</p>
+  <div class="sign_up_btn">
+    <p class="sign_up_p2"><%= link_to '飲食店様はこちら' ,new_shop_session_path, class: "nav-list", data: { turbo: false } %><i class="far fa-arrow-alt-circle-right"></i></p>
+    <p class="sign_up_p3"><%= link_to '業者様はこちら', new_buyer_session_path,class: "nav-list" , data: { turbo: false }%><i class="far fa-arrow-alt-circle-right"></i></p>
+  </div>
+</div>

@@ -53,3 +53,6 @@ production:
   database: le_pont_info_production
   username: le_pont_info
   password: <%= ENV["LE_PONT_INFO_DATABASE_PASSWORD"] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5

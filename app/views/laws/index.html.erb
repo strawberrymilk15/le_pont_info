@@ -1,0 +1,65 @@
+<p class="back_home_p"><%= link_to 'Home',root_path , class: "nav-list1"  %></p>
+<h1 class="l_h1">特定商取引法に基づく表示</h1>
+
+<h2 class="l_h2">販売業者</h2>
+<p class="l_p">le pont</p>
+
+<h2 class="l_h2">運営責任者</h2>
+<p class="l_p">代表 松井 悠</p>
+
+<h2 class="l_h2">所在地</h2>
+<p class="l_p">〒439-0019<br>静岡県菊川市半済1316</p>
+
+<h2 class="l_h2">電話番号</h2>
+<p class="l_p">080-4961-6797</p>
+
+<h2 class="l_h2">メールアドレス</h2>
+<p class="l_p">lepont.info@gmail.com</p>
+
+<h2 class="l_h2">販売価格</h2>
+<p class="l_p">購入手続きの際に画面に表示されます。<br>なお、販売価格以外に、インターネット接続料金、通信料金等はお客様のご負担となります。</p>
+
+<h2 class="l_h2">商品等の引渡時期等</h2>
+<p class="l_p">デジタルコンテンツは、購入手続きの際に特別な定めを置いている場合を除き、購入手続き完了後、直ちにご利用いただけます。</p>
+
+<h2 class="l_h2">お支払い方法</h2>
+<p class="l_p">クレジットカード決済</p>
+
+<h2 class="l_h2">キャンセル</h2>
+<p class="l_p">購入手続き完了後のお客様のご都合によるキャンセル(途中退会による場合を含みます)はできません。</p>
+
+
+<footer>
+  <div class="home_footer">
+    <div class="footer_div">
+      <ul class="footer_ul">
+        <li class="footer_li">マイページ</li>
+        <li class="f_l"><%= link_to 'トップページ',root_path , class: "nav-list"  %></li>
+        <li class="f_l"><%= link_to '新規会員登録(未登録の方)',sign_ups_path , class: "nav-list"  %></li>
+        <li class="f_l"><%= link_to 'ログイン',sign_ins_path , class: "nav-list"  %></li>
+      </ul>
+    </div>
+    <div class="footer_div">
+      <ul class="footer_ul">
+        <li class="footer_li">ヘルプ・ガイド</li>
+        <li class="f_l"><%= link_to 'よくある質問',helps_path , class: "nav-list"  %></li>
+        <li class="f_l"><%= link_to 'お問い合わせ',"https://form.run/@yaksoccer-1645364845" , class: "nav-list"  %></li>
+      </ul>
+    </div>
+    <div class="footer_div">
+      <ul class="footer_ul">
+        <li class="footer_li">プライバシーと利用規約</li>
+        <li class="f_l"><%= link_to 'プライバシーポリシー',privacies_path , class: "nav-list"  %></li>
+        <li class="f_l"><%= link_to 'le pont利用規約',terms_path , class: "nav-list" %></li>
+        <li class="f_l"><%= link_to '特定商取引法に基づく表示',laws_path , class: "nav-list" %></li>
+      </ul>
+    </div>
+    <div class="footer_div">
+      <ul class="footer_ul">
+        <li class="footer_li">le pontについて</li>
+        <li class="f_l"><%= link_to '会社概要(運営会社)',"https://lepont-inc.com/" , class: "nav-list"  %></li>
+      </ul>
+    </div>
+  </div>
+  <p class="footer_copy">Copyright&copy;le pont, Inc.</p>
+</footer>

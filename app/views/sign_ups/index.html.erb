@@ -1,0 +1,11 @@
+<p class="back_home_p"><%= link_to 'Home',root_path , class: "nav-list1"  %></p>
+<div class="sign_up_body">
+  <div class="sign_up_div">
+    <%= image_tag 'logo88.png' %>
+  </div>
+  <p class="sign_up_p">この度は、le pontにご興味をお持ち頂きありがとうございます。<br>事前登録後、ご登録のアドレス宛に事前登録コードが送られます。<br>リリース時の新規登録に必要ですので必ずお控え下さい。<br>事前登録画面へは以下のボタンからお進み下さい。</p>
+  <div class="sign_up_btn">
+    <p class="sign_up_p2"><%= link_to '飲食店様はこちら' ,new_shop_registration_path, class: "nav-list" , data: { turbo: false }%><i class="far fa-arrow-alt-circle-right"></i></p>
+    <p class="sign_up_p3"><%= link_to '業者様はこちら', new_buyer_registration_path,class: "nav-list" , data: { turbo: false }%><i class="far fa-arrow-alt-circle-right"></i></p>
+  </div>
+</div>

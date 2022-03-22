@@ -1,0 +1,45 @@
+<% if current_admin %>
+  <%= link_to "ホームへ戻る" ,admin_homes_path, class: "all_back_home" %>
+<%elsif current_shop%>
+  <%= link_to "ホームへ戻る" ,shop_homes_path, class: "all_back_home" %>
+<%elsif current_buyer%>
+  <%= link_to "ホームへ戻る" ,buyer_homes_path, class: "all_back_home" %>
+<%end%>
+
+<div class="blog_show_body">
+  <div class="new_news_div">
+    <%= image_tag 'logo88.png' , class: "new_news_logo_img" %>
+  </div>
+  <div class="blog_show_date">
+    <p class="blog_show_date_p"><%= @blog.created_at.strftime('%Y/%m/%d')%></p>
+  </div>
+  <div class="blog_show_title">
+    <h1 class="blog_show_title_h1"><%= @blog.title%></h1>
+  </div>
+  <div class="blog_show_img">
+    <%= image_tag @blog.images[0] , class: "blog_show_image", alt: "ブログ画像" %>
+  </div>
+  <div class="blog_show_text">
+    <p class="blog_show_text_p"><%= @blog.text %></p>
+  </div>
+
+  <h2 class="blog_recommend_h2">Recommend<span class="blog_recommend_span">こちらの記事も人気です</span></h2>
+  <div class="blog_recommend_div">
+    <%if Blog.exists?%>
+    <% @blogs.each do |b| %>
+      <%= link_to blog_path(b.id),class:"blogs_show_a" do %>
+        <div class="ad_blogs_contents">
+          <% if b.eyecathing.attached? %>
+            <%= image_tag b.eyecathing , class: "eyecatch", alt: "アイキャッチ画像" %>
+          <%else%>
+            <%= image_tag 'img.jpeg' ,class: "buy_ms_img"  %>
+          <%end%>
+          <p class="ad_blogs_title"><%= b.title %></p>
+        </div>
+      <%end%>
+    <%end%>
+  <%end%>
+  </div>
+  <%= link_to "過去一覧を見る" ,blogs_path, class: "news_list_a" %>
+
+</div>

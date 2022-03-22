@@ -1,0 +1,15 @@
+<h2 class="forget_pas_h2">パスワードをお忘れですか？</h2>
+
+<%= form_with model: @buyer, url: buyer_password_path, class: 'reset_pas_form', local: true do |f| %>
+  <%= render "buyers/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email ,class:"labell" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "入力されたメールアドレスにパスワード再設定メールを送信します", class:"reset_pas_submit" %>
+  </div>
+<% end %>
+

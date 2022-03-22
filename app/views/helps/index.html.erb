@@ -1,0 +1,93 @@
+<p class="back_home_p"><%= link_to 'Home',root_path , class: "nav-list1"  %></p>
+<h1 class="qa_h1">よくある質問</h1>
+
+<ul class="accordion-area">
+
+<li><!--li ~ /li までが一つのアコーディオン-->
+<section>
+<h3 class="title">この事前登録サイトに登録するとどの様な特典があるのですか</h3>
+<div class="box">
+<p>まず、リリース後の月額利用料が通常5,980円から3,980円で利用できる様になります。<br>そして、事前登録総数によってリリース後の無料期間が通常1ヶ月から最大半年まで伸びます。無料期間に関する事前登録特典の内容は以下です。</p>
+<p class="box_p1">事前登録者数500ユーザー突破<span class="box_span">無料期間1ヶ月半</span></p>
+<p class="box_p1">事前登録者数1000ユーザー突破<span class="box_span">無料期間2ヶ月</span></p>
+<p class="box_p1">事前登録者数3000ユーザー突破<span class="box_span">無料期間3ヶ月</span></p>
+<p class="box_p1">事前登録者数6000ユーザー突破<span class="box_span">無料期間4ヶ月</span></p>
+<p class="box_p1">事前登録者数10000ユーザー突破<span class="box_span">無料期間5ヶ月</span></p>
+<p class="box_p1">事前登録者数15000ユーザー突破<span class="box_span">無料期間6ヶ月</span></p>
+</div>
+</section>
+</li>
+
+<li>
+<section>
+<h3 class="title">この事前登録サイトに登録して、サイト内では何ができますか？</h3>
+<div class="box">
+<p>ログインしていただくと、主に、現在の事前登録総数、運営からのお知らせが確認できます。運営へのお問い合わせも可能です。</p>
+</div>
+</section>
+</li>
+
+<li>
+<section>
+<h3 class="title">サービス利用開始後はいつでも解約できますか？</h3>
+<div class="box">
+<p>いつでも解約が可能で解約料金も一切かかりません。<br>※事前登録の方がご解約された場合、再度ご登録いただく際には、通常の月額料金5,980円となりますのでご注意ください。</p>
+</div>
+</section>
+</li>
+
+<li>
+<section>
+<h3 class="title">サービスリリース後は、新機能の追加やアップデートはありますか？</h3>
+<div class="box">
+<p>リリース後も随時、新機能の追加とアップデートを行って参ります。<br>現在確定している追加予定の新機能は、共通お食事券サービス(弊社がお食事券を発行し、一般ユーザー(登録無料の弊社会員)へ配布し、本サービスへ登録している飲食店様で利用ができます。たまったお食事券は弊社へお送りいただく事で後日飲食店様へお振込する流れになります。)と、業者様向けアプリ内マーケティング機能(アプリ内での飲食店様のエリア別、カテゴリ別に発注動向等を数値化、グラフ化し販促や新規獲得、市場のリサーチとしてご活用いただけます。)の2つです。今後の新機能等について、既存の月額料金でご利用いただけますのでご安心ください。</p>
+</div>
+</section>
+</li>
+
+<li>
+<section>
+<h3 class="title">月額料金がこんなに安くて大丈夫ですか？</h3>
+<div class="box">
+<p>全く問題ございません。弊社の代表が元々調理師で現場を経験していたからこそ、現場に寄り添った価格帯とサービス内容を提供したいという思いから本サービスアイデアが生まれました。サービスを利用する中でこんな機能が欲しい、もっとこうして欲しいという要望があればお気軽にお問い合わせ下さい。</p>
+</div>
+</section>
+</li>
+
+</ul>
+
+
+<footer>
+  <div class="home_footer">
+    <div class="footer_div">
+      <ul class="footer_ul">
+        <li class="footer_li">マイページ</li>
+        <li class="f_l"><%= link_to 'トップページ',root_path , class: "nav-list"  %></li>
+        <li class="f_l"><%= link_to '新規会員登録(未登録の方)',sign_ups_path , class: "nav-list"  %></li>
+        <li class="f_l"><%= link_to 'ログイン',sign_ins_path , class: "nav-list"  %></li>
+      </ul>
+    </div>
+    <div class="footer_div">
+      <ul class="footer_ul">
+        <li class="footer_li">ヘルプ・ガイド</li>
+        <li class="f_l"><%= link_to 'よくある質問',helps_path , class: "nav-list"  %></li>
+        <li class="f_l"><%= link_to 'お問い合わせ',"https://form.run/@yaksoccer-1645364845" , class: "nav-list"  %></li>
+      </ul>
+    </div>
+    <div class="footer_div">
+      <ul class="footer_ul">
+        <li class="footer_li">プライバシーと利用規約</li>
+        <li class="f_l"><%= link_to 'プライバシーポリシー',privacies_path , class: "nav-list"  %></li>
+        <li class="f_l"><%= link_to 'le pont利用規約',terms_path , class: "nav-list" %></li>
+        <li class="f_l"><%= link_to '特定商取引法に基づく表示',laws_path , class: "nav-list" %></li>
+      </ul>
+    </div>
+    <div class="footer_div">
+      <ul class="footer_ul">
+        <li class="footer_li">le pontについて</li>
+        <li class="f_l"><%= link_to '会社概要(運営会社)',"https://lepont-inc.com/" , class: "nav-list"  %></li>
+      </ul>
+    </div>
+  </div>
+  <p class="footer_copy">Copyright&copy;le pont, Inc.</p>
+</footer>

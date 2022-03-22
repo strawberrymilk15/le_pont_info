@@ -1,0 +1,27 @@
+<% if current_admin %>
+  <%= link_to "ホームへ戻る" ,admin_homes_path, class: "all_back_home" %>
+<%elsif current_shop%>
+  <%= link_to "ホームへ戻る" ,shop_homes_path, class: "all_back_home" %>
+<%elsif current_buyer%>
+  <%= link_to "ホームへ戻る" ,buyer_homes_path, class: "all_back_home" %>
+<%end%>
+
+<div class="index_news_body">
+  <div class="new_news_div">
+    <%= image_tag 'logo88.png' , class: "new_news_logo_img" %>
+  </div>
+  <h1 class="index_news_h1">le pontニュース一覧</h1>
+  <div class="index_news_list_div">
+  <%if News.exists?%>
+    <% @news.each do |n| %>
+      <%= link_to news_path(n.id),class:"news_show_a" do %>
+        <div class="index_news_contents">
+          <p class="index_news_date"><%= n.created_at.strftime('%Y/%m/%d')%></p>
+          <p class="index_news_title"><%= n.title%></p>
+        </div>
+      <%end%>
+    <%end%>
+  <%end%>
+</div>
+
+</div>

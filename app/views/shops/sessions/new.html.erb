@@ -1,0 +1,31 @@
+<body>
+<p class="back_home_p"><%= link_to 'Home',root_path , class: "nav-list1"  %></p>
+<div class="sign_up_div5">
+  <div class="signin">
+    <h1 class="sign_h1">le pont|飲食店様ログイン|</h1>
+    <div class="sign_div">
+      <%= form_with model: @shop, url: shop_session_path,class: 'session-main', local: true do |f| %>
+        <div class='form-wrap'>
+          <div class="form-group">
+            <%= f.email_field :email, class:"input-default", id:"email", placeholder:"例)le-pont@example.com", autofocus: true %>
+          </div>
+          <div class="form-group">
+            <%= f.password_field :password, class:"input-default", id:"password", placeholder:"パスワード" %>
+          </div>
+          <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+          <% end %>
+          <div class='login-btn'>
+            <%= f.submit "ログイン" ,class:"login-btn" %>
+          </div>
+          <p class="sign_p">登録がまだの方は……</p>
+          <p class="sign_p3"><%= link_to "新規会員登録",new_shop_registration_path , class: "admin-list9" %></p>
+        </div><!--.form-wrap終わり-->
+      <%end%>
+    </div><!--.sign_div終わり-->
+    <p class="sign_p2"><%= link_to "パスワードをお忘れの方はこちら",new_shop_password_path, class: "admin-list9" %></p>
+  </div><!--.signin終わり-->
+</body>

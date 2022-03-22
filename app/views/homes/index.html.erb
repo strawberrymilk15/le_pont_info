@@ -1,0 +1,202 @@
+<div class="home_div">
+  <div class="home_div10">
+    <header class="home_header">
+      <nav class="home_nav">
+        <ul class="home_ul">
+          <li class="home_li2">
+            <%= link_to root_path ,class:"home_li10" do %>
+              <%= image_tag 'logo77.png' , class: "head_logo_img" %>
+            <%end%>
+          </li>
+          <li><%= link_to "サービス" ,"#servise",class:"home_li"%></li>
+          <li><%= link_to "料金" ,"#price",class:"home_li"%></li>
+          <li><%= link_to "お問い合わせ" ,"https://form.run/@yaksoccer-1645364845" ,class:"home_li"%></li>
+          <li class="home_li5"><%= link_to "新規会員登録",sign_ups_path ,class:"home_li3", data: { turbo: false }%></li>
+          <li class="home_li6"><%= link_to "ログイン" ,sign_ins_path,class:"home_li4"%></li>
+        </ul>
+      </nav>
+    </header>
+    <h1 class="home_h1">飲食店と業者のマッチングサービス<br>【アプリリリース前、事前登録キャンペーン】</h1>
+    <p class="home_p">いつ、どこでもメッセージのやり取りや発注ができる</p>
+    <p class="home_pp">カテゴリ別、名前検索、地域別検索で探したい取引先が見つかる</p>
+    <p class="home_p2"><%= link_to "事前登録して特典を受ける" ,sign_ups_path,class:"home_li8", data: { turbo: false }%></p>
+    <p class="home_p3">もっと詳しく</p>
+    <div class="home_div_detail">
+      <%= link_to "#detail",class:"home_li" do %>
+        <i class="fas fa-arrow-down"></i>
+      <%end%>
+    </div>
+  </div>
+</div>
+
+<div class="home_div_2" id="detail">
+  <h2 class="home_h2 blurTrigger">飲食店の方、こんなお悩みありませんか？</h2>
+    <ul class="home_ul_2 blurTrigger">
+      <li>日々の発注方法が業者さんによって違う…<br>(電話やFAX、業者さん独自の発注システム、口頭など)</li>
+      <li>試作でこんな食材が欲しいけど既存の取引先で頼めるのかな…</li>
+      <li>もう少し安い所は無いのかな…</li>
+      <li>飲食店をこれから始めたいけど、どこの業者さんが良いんだろう…</li>
+    </ul>
+    <h2 class="home_h2 blurTrigger">業者の方、こんなお悩みありませんか？</h2>
+    <ul class="home_ul_2 blurTrigger">
+      <li>休業などのお知らせがある度に紙を発行するのは工数がかかる…</li>
+      <li>もう少し円滑に飲食店の方とやり取りが出来ればな…</li>
+      <li>新しい取引先を見つけたい…</li>
+      <li>このエリアにはどんな飲食店があるのだろう…</li>
+    </ul>
+    <p class="home_p4 blurTrigger">上記のように、パッと思いつくだけでも気になる所、不便な所が沢山あると思います。"le pont"を使えば、これ一つで全て解決できます!</p>
+
+    <div class="home_div_6_fle blurTrigger">
+      <div class="home_div_7">
+        <%= image_tag '10.png' ,class: "home_img"  %>
+      </div>
+      <div class="home_div_7">
+        <%= image_tag '20.png' ,class: "home_img"  %>
+      </div>
+      <div class="home_div_7">
+        <%= image_tag '30.png' ,class: "home_img"  %>
+      </div>
+      <div class="home_div_7">
+        <%= image_tag '40.png' ,class: "home_img"  %>
+      </div>
+    </div>
+</div>
+
+<h2 class="home_h2_3 blurTrigger" id="servise">サービス内容</h2>
+<h3 class="home_h3 blurTrigger">飲食店様</h3>
+
+<div class="home_div_3">
+  <h4 class="home_h4 blurTrigger">メリット</h4>
+  <ul class="home_ul_3 blurTrigger">
+    <li>・業者さんをカテゴリ別・エリア別・名前で検索できる</li>
+    <li>・業者さんを価格や内容で比較できる</li>
+    <li>・いつ、どこでもメッセージのやり取りや発注ができる</li>
+    <li>・アプリ内で取引している業者さんのお知らせが確認できる</li>
+    <li>・お店の状況や休業などのお知らせを投稿できる</li>
+    <li>・商品の中から気になる商品を「持ってきてもらう」ボタンで持ってきて貰う</li>
+    <li>・発注履歴から同じ物をすぐ発注できる</li>
+    <li>・新しい取引先を探すことができる</li>
+    <li>・欲しい商品や食材がアプリ内で探せる</li>
+  </ul>
+</div>
+
+<div class="home_div_3">
+  <h4 class="home_h4 blurTrigger">使い方</h4>
+  <div class="home_div_4_fle blurTrigger">
+    <div class="home_div_5">
+      <%= image_tag '1.png' ,class: "home_img"  %>
+      <p class="home_p7">①会員登録</p>
+      <p class="home_p8">シンプル操作で簡単登録!</p>
+    </div>
+    <div class="home_div_5">
+      <%= image_tag '2.png' ,class: "home_img"  %>
+      <p class="home_p7">②業者さんを検索</p>
+      <p class="home_p8">カテゴリ別・エリア別・名前で細かく検索!</p>
+    </div>
+    <div class="home_div_5">
+      <%= image_tag '3.png' ,class: "home_img"  %>
+      <p class="home_p7">③取引開始!</p>
+      <p class="home_p8">好きな時に発注・メッセージを送信!</p>
+    </div>
+  </div>
+</div>
+
+<h3 class="home_h3 blurTrigger">業者様</h3>
+
+<div class="home_div_3">
+  <h4 class="home_h4 blurTrigger">メリット</h4>
+  <ul class="home_ul_3 blurTrigger">
+    <li>・飲食店をカテゴリ別・エリア別・名前で検索できる</li>
+    <li>・いつ、どこでもメッセージのやり取りや受注ができる</li>
+    <li>・アプリ内で取引している飲食店のお知らせが確認できる</li>
+    <li>・商品の入荷や売り切れ、休業などのお知らせを投稿できる</li>
+    <li>・飲食店が持ってきて欲しいと選んだ商品をアプリ内ですぐ確認できる</li>
+    <li>・いつ届ける事が出来るかの通知がボタン一つで簡単操作</li>
+    <li>・受注をしたら商品ごとにお届け日時の通知を選択可能<br>(例：一括即日配送や一部商品を3日後や1週間後に配送)</li>
+    <li>・新しい取引先を探すことができる</li>
+    <li>・商品を一括で登録が可能</li>
+    <li>・取引数や飲食店からの評価によって検索上位を目指せる<br>→アプリ内で優位性を確立できる</li>
+  </ul>
+</div>
+
+<div class="home_div_3 ">
+  <h4 class="home_h4 blurTrigger">使い方</h4>
+  <div class="home_div_4_fle blurTrigger">
+    <div class="home_div_5">
+      <%= image_tag '1.png' ,class: "home_img"  %>
+      <p class="home_p7">①会員登録</p>
+      <p class="home_p8">シンプル操作で簡単登録!</p>
+    </div>
+    <div class="home_div_5">
+      <%= image_tag '2.png' ,class: "home_img"  %>
+      <p class="home_p7">②飲食店を検索してアピール!</p>
+      <p class="home_p8">カテゴリ別・エリア別・名前で細かく検索!アピールボタンや直接メッセージを送って新規取引先を獲得!</p>
+    </div>
+    <div class="home_div_5">
+      <%= image_tag '5.png' ,class: "home_img"  %>
+      <p class="home_p7">③あとは受注を待つだけ!</p>
+      <p class="home_p8">プロフィールや投稿、商品一覧を整えて、受注を待つだけ!</p>
+    </div>
+  </div>
+</div>
+
+<h2 class="home_h2_3 blurTrigger" id="price">料金</h2>
+
+<p class="home_p10 blurTrigger">飲食店様、業者様一律</p>
+<p class="home_p11 blurTrigger">月額5,980円(税込)</p>
+<p class="home_p12 blurTrigger"><i class="fas fa-plus"></i></p>
+<p class="home_p14 blurTrigger">1ヶ月の無料期間</p>
+<p class="home_p122 blurTrigger">事前登録でなんと...<i class="fas fa-arrow-down"></i></p>
+<p class="home_p13 blurTrigger">月額3,980円(税込)!!</p>
+<p class="home_p12 blurTrigger"><i class="fas fa-plus"></i></p>
+<p class="home_p15 blurTrigger">事前登録者数の合計によってリリース後最初の無料期間が伸びる!</p>
+
+<div class="home_div6 blurTrigger">
+  <ul class="home_ul5">
+    <li>事前登録者数500ユーザー突破<span class="home_span1">無料期間1ヶ月半</span></li>
+    <li>事前登録者数1000ユーザー突破<span class="home_span1">無料期間2ヶ月</span></li>
+    <li>事前登録者数3000ユーザー突破<span class="home_span1">無料期間3ヶ月</span></li>
+    <li>事前登録者数6000ユーザー突破<span class="home_span1">無料期間4ヶ月</span></li>
+    <li>事前登録者数10000ユーザー突破<span class="home_span1">無料期間5ヶ月</span></li>
+    <li>事前登録者数15000ユーザー突破<span class="home_span1">無料期間6ヶ月</span></li>
+  </ul>
+</div>
+
+<p class="home_p20 TextTyping">アプリリリースは2022年秋!</p>
+
+<p class="home_p17 blurTrigger"><%= link_to "事前登録はこちらから!",sign_ups_path ,class:"home_li3", data: { turbo: false }%></p>
+
+<footer>
+  <div class="home_footer">
+    <div class="footer_div">
+      <ul class="footer_ul">
+        <li class="footer_li">マイページ</li>
+        <li class="f_l"><%= link_to 'トップページ',root_path , class: "nav-list"  %></li>
+        <li class="f_l"><%= link_to '新規会員登録(未登録の方)',sign_ups_path , class: "nav-list", data: { turbo: false }  %></li>
+        <li class="f_l"><%= link_to 'ログイン',sign_ins_path , class: "nav-list"  %></li>
+      </ul>
+    </div>
+    <div class="footer_div">
+      <ul class="footer_ul">
+        <li class="footer_li">ヘルプ・ガイド</li>
+        <li class="f_l"><%= link_to 'よくある質問',helps_path , class: "nav-list", data: { turbo: false }  %></li>
+        <li class="f_l"><%= link_to 'お問い合わせ',"https://form.run/@yaksoccer-1645364845" , class: "nav-list"  %></li>
+      </ul>
+    </div>
+    <div class="footer_div">
+      <ul class="footer_ul">
+        <li class="footer_li">プライバシーと利用規約</li>
+        <li class="f_l"><%= link_to 'プライバシーポリシー',privacies_path , class: "nav-list"  %></li>
+        <li class="f_l"><%= link_to 'le pont利用規約',terms_path , class: "nav-list" %></li>
+        <li class="f_l"><%= link_to '特定商取引法に基づく表示',laws_path , class: "nav-list" %></li>
+      </ul>
+    </div>
+    <div class="footer_div">
+      <ul class="footer_ul">
+        <li class="footer_li">le pontについて</li>
+        <li class="f_l"><%= link_to '会社概要(運営会社)',"https://lepont-inc.com/" , class: "nav-list"  %></li>
+      </ul>
+    </div>
+  </div>
+  <p class="footer_copy">Copyright&copy;le pont, Inc.</p>
+</footer>

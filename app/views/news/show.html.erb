@@ -1,0 +1,28 @@
+<% if current_admin %>
+  <%= link_to "ホームへ戻る" ,admin_homes_path, class: "all_back_home" %>
+<%elsif current_shop%>
+  <%= link_to "ホームへ戻る" ,shop_homes_path, class: "all_back_home" %>
+<%elsif current_buyer%>
+  <%= link_to "ホームへ戻る" ,buyer_homes_path, class: "all_back_home" %>
+<%end%>
+
+<div class="show_news_body">
+  <div class="new_news_div">
+    <%= image_tag 'logo88.png' , class: "new_news_logo_img" %>
+  </div>
+  <div class="blog_show_date">
+    <p class="blog_show_date_p"><%= @newss.created_at.strftime('%Y/%m/%d')%></p>
+  </div>
+  <div class="blog_show_title">
+    <h1 class="blog_show_title_h1"><%= @newss.title%></h1>
+  </div>
+  <div class="blog_show_img">
+    <%= image_tag @newss.image , class: "blog_show_image", alt: "ニュース画像" %>
+  </div>
+  <div class="blog_show_text">
+    <p class="blog_show_text_p"><%= @newss.text %></p>
+  </div>
+
+   <%= link_to "過去一覧を見る" ,news_index_path , class: "news_list_a" %>
+
+</div>

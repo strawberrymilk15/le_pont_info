@@ -24,10 +24,17 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = '認証メール<lepont.info@gmail.com>'
 
   # Configure the class responsible to send e-mails.
-  # config.mailer = 'Devise::Mailer'
+  config.mailer = 'Devise::Mailer'
+  config.reconfirmable = true
+  config.expire_all_remember_me_on_sign_out = true
+  config.timeout_in = 1.day
+  config.confirm_within = 1.days
+  config.reset_password_within = 6.hours
+  config.scoped_views = true
+  config.sign_out_via = :delete
 
   # Configure the parent class responsible to send e-mails.
   # config.parent_mailer = 'ActionMailer::Base'

@@ -1,0 +1,67 @@
+<div class="home_div20">
+  <div class="home_div10">
+    <header class="home_header">
+          <nav class="home_nav">
+            <ul class="home_ul">
+              <li class="home_li2">
+                  <%= image_tag 'logo77.png' , class: "head_logo_img" %>
+              </li>
+              <li><%= link_to "ニュース投稿" ,new_news_path,class:"home_li"%></li>
+              <li><%= link_to "ブログ投稿" ,new_blog_path,class:"home_li"%></li>
+              <%=button_to 'ログアウト' ,destroy_admin_session_path, method: :delete , data: { turbo: false } ,class: "button"%>
+              <li class="my_name_li">
+                <%= link_to admin_homes_path ,class:"home_li80" do %>
+                  <%=current_admin.name%>
+                <%end%>
+              </li>
+            </ul>
+          </nav>
+    </header>
+    <div class="now_user_div">
+      <div class="now_user_div2">
+        <p class="now_user_count">現在の事前登録者数は、<br><span class="total_user_span"><%=Shop.count + Buyer.count + 10000%></span><br>ユーザーです。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 class="ad_news_h2">ニュース</h2>
+
+<div class="ad_news_list_div">
+  <%if News.exists?%>
+    <% @news.each do |n| %>
+      <%= link_to news_path(n.id),class:"news_show_a" do %>
+        <div class="ad_news_contents">
+          <p class="ad_news_date"><%= n.created_at.strftime('%Y/%m/%d')%></p>
+          <p class="ad_news_title"><%= n.title%></p>
+        </div>
+      <%end%>
+    <%end%>
+  <%end%>
+</div>
+
+
+<p class="ad_news_reco"><%= link_to "もっと見る",news_index_path ,class:"home_li"%></p>
+
+<h2 class="ad_news_h2">ブログ</h2>
+
+<div class="ad_blogs_list_div">
+  <%if Blog.exists?%>
+    <% @blogs.each do |b| %>
+      <%= link_to blog_path(b.id),class:"blogs_show_a" do %>
+        <div class="ad_blogs_contents">
+          <% if b.eyecathing.attached? %>
+            <%= image_tag b.eyecathing , class: "eyecatch", alt: "アイキャッチ画像" %>
+          <%else%>
+            <%= image_tag 'img.jpeg' ,class: "buy_ms_img"  %>
+          <%end%>
+          <p class="ad_blogs_title"><%= b.title %></p>
+        </div>
+      <%end%>
+    <%end%>
+  <%end%>
+</div>
+
+<p class="ad_blogs_reco"><%= link_to "もっと見る" ,blogs_path ,class:"home_li"%></p>
+
+

@@ -1,0 +1,25 @@
+<h2 class="forget_pas_h2">パスワード再設定</h2>
+
+<%= form_with model: @buyer, url: buyer_password_path, method: :patch, class:'reset_pas_form', local: true do |f| %>
+  <%= render "buyers/shared/error_messages", resource: resource %>
+  <%= f.hidden_field :reset_password_token %>
+
+  <div class="field">
+    <%= f.label :password, "New password" %><br />
+    <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %>)</em><br />
+    <% end %>
+    <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, "Confirm new password" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "パスワードを変更する", class:"reset_pas_submit" %>
+  </div>
+<% end %>
+
+<%= render "buyers/shared/links" %>

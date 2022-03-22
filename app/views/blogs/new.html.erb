@@ -1,0 +1,34 @@
+<div class="new_news_body">
+  <div class="new_news_div">
+    <%= image_tag 'logo88.png' , class: "new_news_logo_img" %>
+  </div>
+  <h1 class="new_news_h1">新規投稿</h1>
+  <%= form_with model: @blog, url: blogs_path, local: true do |f| %>
+    <div class="new_news_div1">
+      <p class="new_news_p">【投稿画像】<span class="new_news_span">必須</span></p>
+    </div>
+    <div class="click_upload">
+      <p class="click_p">クリックしてファイルをアップロード</p>
+      <%= f.file_field :images , multiple: true %>
+    </div>
+     <div class="new_news_div1">
+      <p class="new_news_p">【アイキャッチ画像】<span class="new_news_span">必須</span></p>
+    </div>
+    <div class="click_upload">
+      <p class="click_p">クリックしてファイルをアップロード</p>
+      <%= f.file_field :eyecathing  %>
+    </div>
+    <div class="new_news_div1">
+      <p class="new_news_p">【ブログタイトル】<span class="new_news_span">必須</span></p>
+      <%= f.text_field :title , class: "new_news_title", placeholder: "ブログタイトル" , row: "1", maxlength: "20" %>
+    </div>
+    <div class="new_news_div1">
+      <p class="new_news_p">【ブログ本文】<span class="new_news_span">必須</span></p>
+      <%= f.text_area :text , class: "new_news_text", placeholder: "ブログ本文(7文字以上1000文字以内)" , row: "7", maxlength: "1000" %>
+    </div>
+    <div class="new_news_button">
+      <%= f.submit "投稿する" , class: "news_btn" %>
+      <%= link_to "前画面へ戻る" ,admin_homes_path , class: "back_btn" %>
+    </div>
+  <%end%>
+</div>

@@ -1,0 +1,40 @@
+<div>
+  <% if current_buyer %>
+    <%= @buyer.name %>様
+  <%elsif current_shop%>
+    <%= @shop.name %>様
+  <%end%>
+</div>
+  <div>le pontをご利用いただきありがとうございます。</div>
+
+  <% if current_buyer %>
+    <% if @buyer.try(:unconfirmed_email?) %>
+      <div>以下のリンクからユーザの認証を行ってメールアドレス変更手続きを完了してください。</div>
+      <div><%= link_to 'ユーザ認証を実行する', confirmation_url(@buyer,confirmation_token: @token) %></div>
+    <% else %>
+      <% if @buyer.confirmed_at != nil %>
+        <div>会員登録が完了済みです。</div>
+        <div>下記リンクからログインをお願いいたします。</div>
+        <p>http://localhost:3000/</p>
+      <% else %>
+        <div>以下のリンクからユーザの認証を行ってユーザ登録を完了してください。</div>
+        <div><%= link_to 'ユーザ認証を実行する', confirmation_url(@buyer,confirmation_token: @token) %></div>
+        <div> このURLの有効期限は24時間です。</div>
+      <% end %>
+    <% end %>
+  <%elsif current_shop%>
+    <% if @shop.try(:unconfirmed_email?) %>
+      <div>以下のリンクからユーザの認証を行ってメールアドレス変更手続きを完了してください。</div>
+      <div><%= link_to 'ユーザ認証を実行する', confirmation_url(@shop,confirmation_token: @token) %></div>
+    <% else %>
+      <% if @shop.confirmed_at != nil %>
+        <div>会員登録が完了済みです。</div>
+        <div>下記リンクからログインをお願いいたします。</div>
+        <p>http://localhost:3000/</p>
+      <% else %>
+        <div>以下のリンクからユーザの認証を行ってユーザ登録を完了してください。</div>
+        <div><%= link_to 'ユーザ認証を実行する', confirmation_url(@shop,confirmation_token: @token) %></div>
+        <div> このURLの有効期限は24時間です。</div>
+      <% end %>
+    <% end %>
+  <%end%>

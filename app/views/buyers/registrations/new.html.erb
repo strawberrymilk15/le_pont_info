@@ -1,0 +1,65 @@
+<script type="text/javascript" src="//jpostal-1006.appspot.com/jquery.jpostal.js"></script>
+<p class="back_home_p"><%= link_to 'Home',root_path , class: "nav-list1"  %></p>
+<div class="sign_up_div5">
+    <div class="sign_up_div1">
+      <h1 class="sign_h1">le pont|新規会員登録</h1>
+      <%= form_with model: @buyer, url: buyer_registration_path, class: 'registration-main', local: true do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
+
+        <div class="form-group">
+            <label for="email" class="signup_labl">メールアドレス<span class="sign_h">必須</span></label>
+            <%= f.email_field :email, class:"input-default", id:"email", placeholder:"例)le-pont@example.com", autofocus: true %>
+        </div>
+
+        <div class="form-group">
+            <label for="password" class="signup_labl">パスワード<span class="sign_h">必須</span></label>
+            <%= f.password_field :password, class:"input-default", id:"password", placeholder:"半角6~12文字英大文字・小文字・数字それぞれ1文字以上含む必要があります" %>
+        </div>
+
+        <div class="form-group">
+            <label for="passwordconfirmation" class="signup_labl">パスワード確認<span class="sign_h">必須</span></label>
+            <%= f.password_field :passwordconfirmation, autocomplete: "new-password" %>
+        </div>
+
+        <div class="form-group">
+            <label for="name" class="signup_labl">会社名・店舗名・個人名<span class="sign_h">必須</span></label>
+            <%= f.text_field :name, class:"input-default", id:"name", placeholder:"例) 株式会社le pont", maxlength:"20",autofocus: true, autocomplete: "name" %>
+        </div>
+
+        <div class="form-group">
+            <label for="postal_code" class="signup_labl">郵便番号<span class="sign_h">必須</span></label>
+            <%= f.text_field :postal_code, class:"input-default", id:"post_code" ,autofocus: true, autocomplete: "postal_code"%>
+        </div>
+
+        <div class="form-group">
+            <label for="prefecture_code" class="signup_labl">都道府県<span class="sign_h">必須</span></label>
+            <%= f.text_field :prefecture_code,class:"input-default", id:"post_code" ,autofocus: true, autocomplete: "prefecture_code"%>
+        </div>
+
+        <div class="form-group">
+          <label for="city" class="signup_labl">市区町村<span class="sign_h">必須</span></label>
+          <%= f.text_field :city, class:"input-default", id:"address", placeholder:"例) lepon市", maxlength:"40",autofocus: true, autocomplete: "city" %>
+        </div>
+
+        <div class="form-group">
+          <label for="street" class="signup_labl">番地<span class="sign_h">必須</span></label>
+          <%= f.text_field :street, class:"input-default", id:"address", placeholder:"例) leponビル1F 201", maxlength:"40",autofocus: true, autocomplete: "street" %>
+        </div>
+
+        <div class="form-group">
+          <label for="other_address" class="signup_labl">住所2</label>
+          <%= f.text_field :other_address, class:"input-default", id:"address", maxlength:"40",autofocus: true, autocomplete: "other_address" %>
+        </div>
+
+        <div class="form-group">
+          <label for="phone" class="signup_labl">固定または代表者の電話番号<span class="sign_h">必須</span></label>
+          <%= f.text_field :phone, class:"input-default", id:"phone", placeholder:"例) 00000000000",autofocus: true, autocomplete: "phone" %>
+        </div>
+
+        <div class='login-btn'>
+          <input type="submit" value="新規会員登録" class="signup_submit">
+        </div>
+
+      <%end%>
+    </div>
+  </div>

@@ -1,0 +1,27 @@
+<div class="new_news_body">
+  <div class="new_news_div">
+    <%= image_tag 'logo88.png' , class: "new_news_logo_img" %>
+  </div>
+  <h1 class="new_news_h1">新規投稿</h1>
+  <%= form_with model: @news, url: news_index_path, local: true do |f| %>
+    <div class="new_news_div1">
+      <p class="new_news_p">【投稿画像】<span class="new_news_span">必須</span></p>
+    </div>
+    <div class="click_upload">
+      <p class="click_p">クリックしてファイルをアップロード</p>
+      <%= f.file_field :image %>
+    </div>
+    <div class="new_news_div1">
+      <p class="new_news_p">【投稿タイトル】<span class="new_news_span">必須</span></p>
+      <%= f.text_field :title , class: "new_news_title", placeholder: "ニュースタイトル" , row: "1", maxlength: "20" %>
+    </div>
+    <div class="new_news_div1">
+      <p class="new_news_p">【投稿本文】<span class="new_news_span">必須</span></p>
+      <%= f.text_area :text , class: "new_news_text", placeholder: "ニュース本文(7文字以上1000文字以内)" , row: "7", maxlength: "1000" %>
+    </div>
+    <div class="new_news_button">
+      <%= f.submit "投稿する" , class: "news_btn" %>
+      <%= link_to "前画面へ戻る" ,admin_homes_path , class: "back_btn" %>
+    </div>
+  <%end%>
+</div>
