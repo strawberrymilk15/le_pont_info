@@ -63,11 +63,12 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "le_pont_info_production"
 
   config.action_mailer.perform_caching = false
+
   config.action_mailer.default_url_options = { host: "アプリのドメイン名" }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com"
+    address: 'smtp.gmail.com',
     domain: 'gmail.com',
     port: 587,
     user_name: ENV['SEND_MAIL'],
