@@ -24,7 +24,7 @@ class Buyers::PasswordsController < Devise::PasswordsController
   # protected
 
    def after_resetting_password_path_for(resource)
-      new_buyer_session_path
+      root_path
    end
 
   # The path used after sending reset password instructions
