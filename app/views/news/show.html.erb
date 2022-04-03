@@ -23,6 +23,11 @@
     <p class="blog_show_text_p"><%= @newss.text %></p>
   </div>
 
+  <%if current_admin%>
+    <%= link_to "削除する" ,news_path(@newss.id) ,method: :delete,  data: { turbo: false } ,class: "back_btn" %>
+    <%= link_to "編集する" ,edit_news_path(@newss.id) , method: :get, data: { turbo: false } ,class: "back_btn" %>
+  <%end%>
+
    <%= link_to "過去一覧を見る" ,news_index_path , class: "news_list_a" %>
 
 </div>

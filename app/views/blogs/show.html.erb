@@ -23,6 +23,12 @@
     <p class="blog_show_text_p"><%= @blog.text %></p>
   </div>
 
+  <%if current_admin%>
+    <%= link_to "削除する" ,blog_path(@blog.id) , method: :delete, data: { turbo: false } ,class: "back_btn" %>
+    <%= link_to "編集する" ,edit_blog_path(@blog.id) ,method: :get, data: { turbo: false } ,class: "back_btn" %>
+  <%end%>
+
+
   <h2 class="blog_recommend_h2">Recommend<span class="blog_recommend_span">こちらの記事も人気です</span></h2>
   <div class="blog_recommend_div">
     <%if Blog.exists?%>

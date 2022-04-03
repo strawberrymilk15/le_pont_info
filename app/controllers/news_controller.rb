@@ -1,5 +1,5 @@
 class NewsController < ApplicationController
-  before_action :set_news, only: [:edit,:show,:update,:destroy]
+  before_action :set_news, only: [:edit,:show,:update,:destroy,:log_admin_edit]
   before_action :authenticate_admin!, only: [:new]
   
   def index
@@ -20,7 +20,27 @@ class NewsController < ApplicationController
     end
   end
 
+  def update
+    @newss = News.update(news_params)
+    if @newss.save
+      redirect_to admin_homes_path
+    else
+      render :edit
+    end
+  end
+
+  def edit
+  end
+
   def show
+  end
+
+  def destroy
+    news = News.find(params[:id])
+    if current_admin.id == news.admin_id
+      news.destroy
+      redirect_to admin_homes_path
+    end
   end
 
   private
@@ -31,5 +51,11 @@ class NewsController < ApplicationController
 
   def set_news
     @newss = News.find(params[:id])
+  end
+
+  def log_admin_edit
+    if current_admin.id != @newss.admin_id
+      redirect_to root_path
+    end
   end
 end
