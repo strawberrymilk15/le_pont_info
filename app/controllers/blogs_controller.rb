@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
-  before_action :set_blog, only: [:edit,:show,:update,:destroy,:log_admin_edit]
-  before_action :authenticate_admin!, only: [:new]
+  before_action :set_blog, only: [:edit,:show,:update,:destroy]
+  before_action :authenticate_admin!, only: [:new,:edit,:update,:destroy]
 
   def index
     @news = News.all.order(created_at: :desc)
@@ -21,8 +21,7 @@ class BlogsController < ApplicationController
   end
 
   def update
-    @blog = Blog.update(blog_params)
-    if @blog.save
+    if @blog.update(blog_params)
       redirect_to admin_homes_path
     else
       render :edit
@@ -53,9 +52,5 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
   end
 
-  def log_admin_edit
-    if current_admin.id != @blog.admin_id
-      redirect_to root_path
-    end
-  end
+  
 end
