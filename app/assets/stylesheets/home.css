@@ -881,7 +881,7 @@ h2.ad_news_h2 {
   color: yellowgreen;
 }
 .ad_news_contents {
-  width: 75%;
+  width: 90%;
   margin: 1rem auto;
   display: flex;
   align-items: center;
