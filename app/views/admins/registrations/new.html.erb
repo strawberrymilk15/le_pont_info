@@ -3,7 +3,7 @@
     <div class="sign_up_div1">
       <h1 class="sign_h1">le pont|アカウント追加</h1>
       <%= form_with model: @admin, url: admin_registration_path, class: 'registration-main', local: true do |f| %>
-
+        <%= render 'layouts/error_messages', model: f.object %>
         <div class="form-group">
             <label for="email" class="signup_labl">メールアドレス<span class="sign_h">必須</span></label>
             <%= f.email_field :email, class:"input-default", id:"email", placeholder:"例)le-pont@example.com", autofocus: true %>

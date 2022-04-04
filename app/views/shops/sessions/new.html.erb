@@ -5,6 +5,7 @@
     <h1 class="sign_h1">le pont|飲食店様ログイン|</h1>
     <div class="sign_div">
       <%= form_with model: @shop, url: shop_session_path,class: 'session-main', local: true do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
         <div class='form-wrap'>
           <div class="form-group">
             <%= f.email_field :email, class:"input-default", id:"email", placeholder:"例)le-pont@example.com", autofocus: true %>
